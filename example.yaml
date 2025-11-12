@@ -1,0 +1,24 @@
+name: MyWorkflow
+environment: staging
+
+colors:
+  - name: red
+    hex: "#FF0000"
+    labels:
+      - primary
+      - warm
+  - name: green
+    hex: "#00FF00"
+    labels:
+      - primary
+      - cool
+  - name: blue
+    hex: "#0000FF"
+    labels:
+      - primary
+      - cool
+
+
+
+
+      
