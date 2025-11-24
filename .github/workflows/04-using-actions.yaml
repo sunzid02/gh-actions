@@ -5,6 +5,11 @@ on: push
 jobs:
     build:
         runs-on: ubuntu-latest
+
+        defaults:
+          run:
+            working-directory: 04-using-actions/react-app
+
         steps:
         - name: Checkout code #repo-র কোড ডাউনলোড করবে।
           uses: actions/checkout@v4
@@ -16,7 +21,9 @@ jobs:
 
         - name: Install dependencies #ডিপেন্ডেন্সি ইনস্টল করবে
           run: npm ci #ci কমান্ডটি package-lock.json ফাইল অনুসারে নির্ভরশীলতাগুলি ইনস্টল করে। clean install এর সংক্ষিপ্ত রূপ।
-          working-directory: 04-using-actions/react-app
+
+        - name: Run unit tests #ইউনিট টেস্ট চালাবে
+          run: npm run test -- --watchAll=false #--watchAll=false ফ্ল্যাগটি নিশ্চিত করে যে টেস্টগুলি একবার চালানো হবে এবং তারপর বন্ধ হয়ে যাবে, পরিবর্তে ফাইল পরিবর্তনের জন্য অপেক্ষা করবে।
 
 
 
