@@ -1,6 +1,6 @@
 name: 04 - using actions
 
-on: push
+on: workflow_dispatch
 
 jobs:
     build:
@@ -24,9 +24,3 @@ jobs:
 
         - name: Run unit tests #ইউনিট টেস্ট চালাবে
           run: npm run test -- --watchAll=false #--watchAll=false ফ্ল্যাগটি নিশ্চিত করে যে টেস্টগুলি একবার চালানো হবে এবং তারপর বন্ধ হয়ে যাবে, পরিবর্তে ফাইল পরিবর্তনের জন্য অপেক্ষা করবে।
-
-
-
-        #0. Checkout the code from the repository
-        #1. Install deps of our react app
-        # 2. Execute automated tests
