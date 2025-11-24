@@ -6,11 +6,18 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-        - name: Checkout code
+        - name: Checkout code #repo-র কোড ডাউনলোড করবে।
           uses: actions/checkout@v4
           
-        - name: Priniting Folders
-          run: ls
+        - name: Setup Node.js environment #নোড.জেএস সেটআপ করবে
+          uses: actions/setup-node@v4
+          with:
+            node-version: '22.x'
+
+        - name: Install dependencies #ডিপেন্ডেন্সি ইনস্টল করবে
+          run: npm ci #ci কমান্ডটি package-lock.json ফাইল অনুসারে নির্ভরশীলতাগুলি ইনস্টল করে। clean install এর সংক্ষিপ্ত রূপ।
+          working-directory: 04-using-actions/react-app
+
 
 
         #0. Checkout the code from the repository
