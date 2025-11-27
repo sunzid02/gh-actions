@@ -1,3 +1,1 @@
-Repo contain all examples
-
-day 2
+Repo contain all examples and notes for the Github Action course. This has been edited.
